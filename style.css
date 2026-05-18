@@ -1,0 +1,639 @@
+/* ================= GLOBAL ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#fffaf5;
+    color:#222;
+    overflow-x:hidden;
+}
+
+.section{
+    padding:100px 10%;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* ================= NAVBAR ================= */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:#ffffffea;
+    backdrop-filter:blur(10px);
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+    color:#d35400;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#222;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#d35400;
+}
+
+.menu-btn{
+    display:none;
+    font-size:1.8rem;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("https://images.unsplash.com/photo-1547573854-74d2a71d0826?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    center/cover no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding:0 10%;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:30px;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:#d35400;
+    color:#fff;
+    border-radius:50px;
+    transition:0.4s;
+    font-weight:500;
+}
+
+.btn:hover{
+    background:#a04000;
+    transform:translateY(-4px);
+}
+
+/* ================= ABOUT ================= */
+.about{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:50px;
+    align-items:center;
+}
+
+.about-image img{
+    border-radius:20px;
+}
+
+.about-content h2{
+    font-size:2.8rem;
+    margin-bottom:20px;
+    color:#d35400;
+}
+
+.about-content p{
+    line-height:1.9;
+    margin-bottom:20px;
+    color:#555;
+}
+
+/* ================= SECTION TITLE ================= */
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.8rem;
+    color:#d35400;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* ================= MENU ================= */
+.menu-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.food-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.food-card:hover{
+    transform:translateY(-10px);
+}
+
+.food-img{
+    overflow:hidden;
+}
+
+.food-img img{
+    height:240px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.food-card:hover img{
+    transform:scale(1.1);
+}
+
+.food-content{
+    padding:25px;
+}
+
+.food-content h3{
+    margin-bottom:10px;
+}
+
+.food-content p{
+    color:#666;
+    margin-bottom:15px;
+    line-height:1.7;
+}
+
+.food-content span{
+    color:#d35400;
+    font-weight:600;
+}
+
+/* ================= CHEF ================= */
+
+.chef-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.chef-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.chef-card:hover{
+    transform:translateY(-10px);
+}
+
+.chef-img{
+    overflow:hidden;
+}
+
+.chef-img img{
+    height:320px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.chef-card:hover img{
+    transform:scale(1.08);
+}
+
+.chef-info{
+    padding:25px;
+}
+
+.chef-info h3{
+    margin-bottom:10px;
+}
+
+.chef-info p{
+    color:#d35400;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.gallery-card{
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.gallery-card img{
+    height:280px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.gallery-card:hover img{
+    transform:scale(1.1);
+}
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonial-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.testimonial-card{
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-10px);
+}
+
+.testimonial-card i{
+    font-size:2rem;
+    color:#d35400;
+    margin-bottom:15px;
+}
+
+.testimonial-card p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.testimonial-card h3{
+    color:#d35400;
+}
+
+/* ================= RESERVATION ================= */
+
+.reservation{
+    background:
+    linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+    url("https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1600&auto=format&fit=crop")
+    center/cover no-repeat;
+}
+
+.reservation-box{
+    max-width:850px;
+    margin:auto;
+    background:#fff;
+    padding:50px;
+    border-radius:25px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.1);
+}
+
+.reservation-content{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.reservation-content h2{
+    font-size:2.8rem;
+    color:#d35400;
+    margin-bottom:10px;
+}
+
+.reservation-content p{
+    color:#666;
+}
+
+.reservation-form{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.input-box input,
+.input-box textarea{
+    width:100%;
+    padding:16px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-family:'Poppins', sans-serif;
+    outline:none;
+    transition:0.3s;
+}
+
+.input-box textarea{
+    height:140px;
+    resize:none;
+}
+
+.input-box input:focus,
+.input-box textarea:focus{
+    border-color:#d35400;
+}
+
+.input-box:last-child{
+    grid-column:1/3;
+}
+
+.reservation-form button{
+    border:none;
+    cursor:pointer;
+    grid-column:1/3;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.contact-card{
+    background:#fff;
+    padding:40px 30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.contact-card:hover{
+    transform:translateY(-10px);
+}
+
+.contact-card i{
+    font-size:2.2rem;
+    color:#d35400;
+    margin-bottom:20px;
+}
+
+.contact-card h3{
+    margin-bottom:10px;
+}
+
+.contact-card p{
+    color:#666;
+    line-height:1.7;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#fff;
+    padding:50px 10%;
+    text-align:center;
+    border-top:1px solid #eee;
+}
+
+footer h2{
+    color:#d35400;
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.social-icons a{
+    font-size:1.5rem;
+    color:#d35400;
+    margin:0 10px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    color:#a04000;
+}
+
+.copyright{
+    margin-top:20px;
+}
+
+/* ================= SCROLL ANIMATION ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= MOBILE RESPONSIVE FIX ================= */
+
+@media(max-width:900px){
+
+    .section{
+        padding:80px 6%;
+    }
+
+    /* Navbar */
+
+    .navbar{
+        padding:18px 6%;
+    }
+
+    .logo{
+        font-size:1.7rem;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        right:-100%;
+        width:260px;
+        height:100vh;
+        background:#fffaf5;
+        flex-direction:column;
+        align-items:center;
+        padding-top:50px;
+        gap:30px;
+        transition:0.4s;
+        box-shadow:-5px 0 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    /* Hero Section */
+
+    .hero{
+        padding:0 6%;
+        height:100vh;
+    }
+
+    .hero-content h1{
+        font-size:2.3rem;
+        line-height:1.3;
+    }
+
+    .hero-content p{
+        font-size:0.95rem;
+        line-height:1.8;
+    }
+
+    .btn{
+        padding:12px 28px;
+        font-size:0.95rem;
+    }
+
+    /* About */
+
+    .about{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .about-content h2{
+        font-size:2rem;
+    }
+
+    .about-content p{
+        font-size:0.95rem;
+    }
+
+    /* Section Titles */
+
+    .section-title h2{
+        font-size:2rem;
+    }
+
+    .section-title p{
+        font-size:0.95rem;
+    }
+
+    /* Menu */
+
+    .menu-container{
+        grid-template-columns:1fr;
+    }
+
+    .food-img img{
+        height:220px;
+    }
+
+    /* Chef */
+
+    .chef-container{
+        grid-template-columns:1fr;
+    }
+
+    .chef-img img{
+        height:300px;
+    }
+
+    /* Gallery */
+
+    .gallery-container{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-card img{
+        height:240px;
+    }
+
+    /* Testimonials */
+
+    .testimonial-container{
+        grid-template-columns:1fr;
+    }
+
+    .testimonial-card{
+        padding:30px 25px;
+    }
+
+    /* Reservation */
+
+    .reservation-box{
+        padding:35px 20px;
+    }
+
+    .reservation-content h2{
+        font-size:2rem;
+    }
+
+    .reservation-form{
+        grid-template-columns:1fr;
+    }
+
+    .reservation-form button{
+        grid-column:1;
+    }
+
+    .input-box:last-child{
+        grid-column:1;
+    }
+
+    /* Contact */
+
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+
+    .contact-card{
+        padding:35px 25px;
+    }
+
+    /* Footer */
+
+    footer{
+        padding:40px 6%;
+    }
+
+}
