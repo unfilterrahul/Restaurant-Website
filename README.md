@@ -1,5 +1,4 @@
 # Restaurant Website
-
 A responsive restaurant website developed using HTML, CSS, and JavaScript.
 
 ## Features
